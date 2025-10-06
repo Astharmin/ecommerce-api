@@ -9,6 +9,8 @@
 
 > *"API completa para plataforma e-commerce con autenticación JWT, procesamiento de pagos con Stripe y panel administrativo"*
 
+---
+
 ## 🌟 Características Principales
 
 ### 🔐 Sistema de Autenticación
@@ -29,19 +31,123 @@
 - 👥 **Administración de usuarios** y permisos
 - 🏷️ **Categorización avanzada** de productos
 
-## 🏗️ Arquitectura del Sistema
+---
 
-```mermaid
-graph TB
-    A[Client Frontend] --> B[Flask API]
-    B --> C[JWT Authentication]
-    B --> D[Product Management]
-    B --> E[Cart & Orders]
-    B --> F[Stripe Payments]
-    B --> G[Admin Panel]
-    
-    C --> H[User Database]
-    D --> I[Products Database]
-    E --> J[Orders Database]
-    F --> K[Stripe API]
-    G --> L[Admin Dashboard]
+## 🛠️ Tecnologías Usadas
+
+- **Backend:**  
+  - Python 3.8+
+  - Flask
+  - JWT Tokens
+  - SQLAlchemy ORM
+
+- **Base de Datos:**  
+  - MySQL
+
+- **Pagos:**  
+  - Stripe API
+
+- **Seguridad:**  
+  - BCrypt
+  - JWT Authentication
+
+---
+
+## 🗂️ Estructura del Proyecto
+
+```
+ecommerce-api/
+│
+├── src/
+│   ├── main.py
+│   ├── auth/
+│   │   ├── jwt_handler.py
+│   │   └── routes.py
+│   ├── products/
+│   │   ├── models.py
+│   │   ├── routes.py
+│   │   └── admin.py
+│   ├── carts/
+│   │   ├── models.py
+│   │   └── routes.py
+│   ├── orders/
+│   │   ├── models.py
+│   │   └── routes.py
+│   ├── payments/
+│   │   ├── stripe_service.py
+│   │   └── routes.py
+│   ├── users/
+│   │   ├── models.py
+│   │   └── routes.py
+│   ├── admin_panel/
+│   │   └── routes.py
+│   └── database/
+│       └── connection.py
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## 🚀 Instalación Rápida
+
+```bash
+# Clonar repositorio
+git clone <URL_DEL_REPOSITORIO>
+cd ecommerce-api
+
+# Crear entorno virtual
+python -m venv venv
+source venv/bin/activate  # En Windows: venv\Scripts\activate
+
+# Instalar dependencias
+pip install -r requirements.txt
+
+# Ejecutar aplicación
+python src/main.py
+```
+
+---
+
+## 📚 Endpoints Principales
+
+### 🔐 Autenticación
+```http
+POST /auth/register     # Registro de usuario
+POST /auth/login        # Inicio de sesión
+```
+
+### 📦 Productos
+```http
+GET    /products        # Listar productos
+POST   /products        # Crear producto (Admin)
+PUT    /products/{id}   # Actualizar producto
+DELETE /products/{id}   # Eliminar producto
+```
+
+### 🛒 Carrito
+```http
+GET    /cart           # Ver carrito
+POST   /cart/add       # Agregar producto
+DELETE /cart/remove    # Eliminar item
+```
+
+### 💰 Pagos
+```http
+POST /payments/create-intent  # Crear intento de pago
+POST /payments/confirm        # Confirmar pago
+```
+
+---
+
+## 📄 Licencia
+
+MIT
+
+---
+
+<div align="center">
+
+**Desarrollado con ❤️ por [Astharmin](https://github.com/Astharmin)**
+
+*Proyecto basado en [roadmap.sh/projects/ecommerce-api](https://roadmap.sh/projects/ecommerce-api)*
