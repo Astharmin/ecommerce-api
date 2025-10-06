@@ -1,5 +1,7 @@
 # Ecommerce API
 
+https://roadmap.sh/projects/ecommerce-api
+
 Este proyecto es una API para una plataforma de comercio electrónico, construida en Python utilizando Flask. La API incluye autenticación JWT, operaciones CRUD para productos y carritos de compra, integración con Stripe para pagos, y un panel de administración para gestionar productos e inventario.
 
 ## Estructura del Proyecto
@@ -74,3 +76,4 @@ ecommerce-api
 ## Contribuciones
 
 Las contribuciones son bienvenidas. Si deseas contribuir, por favor abre un issue o envía un pull request.
+
