@@ -17,8 +17,7 @@ def create_app():
 
     jwt = JWTManager(app)
 
-    init_db(app)
-
+    init_db()
     app.register_blueprint(auth_bp)
     app.register_blueprint(products_bp)
     app.register_blueprint(carts_bp)

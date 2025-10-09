@@ -14,3 +14,13 @@ def get_db():
         yield db
     finally:
         db.close()
+
+def init_db():
+    # Importa aquí todos tus modelos para que SQLAlchemy registre las tablas
+    # Ejemplo:
+    # from src.models.product import Product
+    # from src.models.user import User
+    # from src.models.order import Order
+    # Agrega aquí todos los modelos que tengas
+
+    Base.metadata.create_all(bind=engine)
